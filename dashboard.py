@@ -9,7 +9,7 @@ from streamlit_folium import folium_static
 from folium.plugins   import MarkerCluster
 
 
-pd.set_option('display.float_format', lambda x: '%.f' % x)
+pd.set_option('display.float_format', lambda x: '%.2f' % x)
 
 st.set_page_config( layout='wide' )
 
@@ -34,7 +34,7 @@ st.write('')
 st.write("Here you can find some interactive information about House Rocket's business project. Feel free to change the filters and check out the variety of houses and its business opportunities.")
 
 st.write("For further information, check out the project in "
-                         "[GitHub](https://github.com/leassis91/Portfolio-Projects/tree/master/HouseRocketEDA)")
+                         "[GitHub](https://github.com/leassis91/Portfolio/tree/main/Insights_Projects/HouseRocketEDA)")
                     
 
 
@@ -245,7 +245,7 @@ def buy_houses(data,geofile):
 
     buy_houses['profit'] = buy_houses['sale_price'] - buy_houses['price']
     st.dataframe(buy_houses[['id','zipcode', 'price','season', 'price_median_season', 'condition_name', 'sale_price' , 'profit']])
-    st.sidebar.write('Total profit of the company will be: S$ {:,.2f} '.format(buy_houses['profit'].sum()))
+    st.sidebar.write('Total profit of the company will be: US $ {:,.2f} '.format(buy_houses['profit'].sum()))
 
     # Mapa de localização
     if st.checkbox('\n\nShow Selected Properties'):
